@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/14 13:02:22 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/14 13:08:11 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_map
 	t_vector	pos_player;
 }				t_map;
 
+// all info needed for the game
 typedef struct s_program
 {
 	void		*mlx_ptr;
