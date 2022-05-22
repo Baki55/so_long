@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 22:29:17 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/21 23:08:23 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/22 18:20:20 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char	*get_next_line(int fd)
 		line[i] = buff;
 		if (buff == '\n')
 			break;
+		i++;
 	}
 	line[i] = '\0';
 	if (!line[0])
