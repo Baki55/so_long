@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/21 23:14:34 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/22 18:13:29 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,4 @@ size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *str);
 char	*get_next_line(int fd);
 int	map_len(int fd);
+void	get_map(char *file_name, t_program *game);
