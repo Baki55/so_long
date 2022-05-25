@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/25 22:00:58 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/25 22:18:22 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,5 @@ void	get_map(char *file_name, t_program *game);
 int	ft_strcmp(const char *s1, const char *s2);
 int	check_extention(const char *file_name, const char *extension);
 int	check_char(t_program game);
+int	check_rectangular(t_program game);
 void	err_extension();
