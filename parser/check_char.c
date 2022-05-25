@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 21:58:45 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/25 22:01:07 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/25 22:53:11 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	check_char(t_program game)
 		while (game.map.map[row][col] != '\n' && game.map.map[row][col] != '\0')
 		{
 			if (in_set(game.map.map[row][col]) == 1)
-				return (1);
+				return (0);
 			col++;
 		}
 		row++;
 	}
-	return (0);
+	return (1);
 }
