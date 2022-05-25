@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:00:49 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/25 21:49:40 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/25 22:52:29 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,10 @@ void	check_map(char *file_name, t_program *game)
 	get_map(file_name, game);
 	if (check_char(game) == 1)
 		err_char(game);
-	if (check_rectangular(*game) == 1)
+	if (check_rectangular(game) == 0)
 		err_rectangular(game);
-	if (check_exit(*game) == 1)
-		err_exit(game);
-	if (check_collectible(*game) == 1)
-		err_collectible(game);
-	if (check_player(*game) == 1)
-		err_player(game);
+	if (check_ecp(*game) == 1)
+		err_ecp(game);
 	if (check_closed(file_name, game) == 1)
 		err_closed(game);
 }
