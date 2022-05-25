@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:00:49 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/22 22:13:58 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/25 21:49:40 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	check_map(char *file_name, t_program *game)
 	if (check_extention(file_name, ".ber") != 0)
 		err_extension();
 	get_map(file_name, game);
-	if (check_char(file_name, game) == 1)
+	if (check_char(game) == 1)
 		err_char(game);
 	if (check_rectangular(*game) == 1)
 		err_rectangular(game);
