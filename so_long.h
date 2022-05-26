@@ -6,12 +6,12 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/26 21:57:11 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/26 22:19:47 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include <sys/stat.h>
+#include <sys/errno.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <unistd.h>
