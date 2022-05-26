@@ -6,11 +6,22 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:10:01 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/25 22:01:02 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/26 15:54:42 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+int	ft_strchr(char *str, char c)
+{
+	while (*str != '\0')
+	{
+		if (*str == c)
+			return (1);
+		str++;
+	}
+	return (0);
+}
 
 size_t	ft_strlen(const char *str)
 {
