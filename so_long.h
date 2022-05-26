@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/25 22:18:22 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/26 15:57:38 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_program
 	size_t		mv_count;
 }				t_program;
 
+int	ft_strchr(char *str, char c);
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *str);
 int	in_set(char c);
@@ -56,4 +57,5 @@ int	ft_strcmp(const char *s1, const char *s2);
 int	check_extention(const char *file_name, const char *extension);
 int	check_char(t_program game);
 int	check_rectangular(t_program game);
+int	check_ecp(t_program game);
 void	err_extension();
