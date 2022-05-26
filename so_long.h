@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/26 15:57:38 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/26 21:33:08 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_vector
 	int	y;
 }				t_vector;
 
-// all info needed for the map
+// all info needed for the map:
 typedef struct s_map
 {
 	char		**map;
@@ -33,7 +33,7 @@ typedef struct s_map
 	t_vector	pos_player;
 }				t_map;
 
-// all info needed for the game
+// all info needed for the game: 
 typedef struct s_program
 {
 	void		*mlx_ptr;
@@ -46,6 +46,7 @@ typedef struct s_program
 	size_t		mv_count;
 }				t_program;
 
+// utils functions:
 int	ft_strchr(char *str, char c);
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *str);
@@ -54,8 +55,18 @@ char	*get_next_line(int fd);
 int	map_len(int fd);
 void	get_map(char *file_name, t_program *game);
 int	ft_strcmp(const char *s1, const char *s2);
+
+//checker functions:
+void	check_map(char *file_name, t_program *game);
 int	check_extention(const char *file_name, const char *extension);
 int	check_char(t_program game);
 int	check_rectangular(t_program game);
 int	check_ecp(t_program game);
+int	check_closed(t_program game);
+
+//error functions:
 void	err_extension();
+void	err_char(t_program *game);
+void	err_rectangular(t_program *game);
+void	err_ecp(t_program *game);
+void	err_closed(t_program *game);
