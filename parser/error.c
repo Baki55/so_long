@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:09:18 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/22 22:24:41 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/26 21:10:07 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,25 @@ void	err_extension()
 	exit(EXIT_FAILURE);
 }
 
-void	err_char(char *file_name)
+void	err_char(t_program *game)
 {
 	write(1, "Invalid character found", 23);
 	exit(EXIT_FAILURE);
 }
 
-void	err_rectangular(t_program game)
+void	err_rectangular(t_program *game)
 {
 	write(1, "The map isn't rectangular", 25);
 	exit(EXIT_FAILURE);
 }
 
-void	err_exit(t_program game)
+void	err_ecp(t_program *game)
 {
-	write(1, "There's no exit in the map", 26);
+	write(1, "There's no exit and/or collectible and/or player in the map", 59);
 	exit(EXIT_FAILURE);
 }
 
-void	err_collectible(t_program game)
-{
-	write(1, "There's no collectible in the map", 33);
-	exit(EXIT_FAILURE);
-}
-
-void	err_player(t_program game)
-{
-	write(1, "There's no player in the map", 28);
-	exit(EXIT_FAILURE);
-}
-
-void	err_closed(t_program game)
+void	err_closed(t_program *game)
 {
 	write(1, "The map isn't closed", 20);
 	exit(EXIT_FAILURE);
