@@ -6,50 +6,47 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:35:52 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/25 22:52:40 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/26 17:58:09 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
 
-int	ft_strchr(char *str, char c)
+int 	check_closed(t_program game)
 {
-	while (*str != '\0')
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	game.map.col = ft_strlen(game.map.map[0]);
+	while (i < game.map.row)
 	{
-		if (*str == c)
-			return (1);
-		str++;
+		j = 0;
+		while (j < game.map.col)
+		{
+			if (i == 0 || i == game.map.row - 1)
+			{
+				if (game.map.map[i][j] != '1')
+					printf("%c\n", game.map.map[i][j]);
+				j++;
+			}
+			if (j == 0 || j == game.map.col - 1)
+			{
+				if (game.map.map[i][j] != '1')
+					printf("%c\n", game.map.map[i][j]);
+				j++;
+			}
+		}
+		i++;
 	}
 	return (0);
 }
 
-int	check_ecp(t_program game)
-{
-	int	e;
-	int	c;
-	int	p;
-	int	i;
-
-	i = 0;
-	e = 0;
-	c = 0;
-	p = 0;
-	while (game.map.map[i])
-	{
-		if (ft_strchr(game.map.map[i], 'E') == 1)
-			e = 1;
-		if (ft_strchr(game.map.map[i], 'C') == 1)
-			c = 1;
-		if (ft_strchr(game.map.map[i], 'P') == 1)
-			p = 1;
-		i++;
-	}
-	return (e && c && p);
-}
 int	main(void)
 {
 	t_program	game;
-	get_map("maps/map1.ber", &game);
-	printf("%d", check_ecp(game));
+	get_map("maps/not_closed_map.ber", &game);
+	//printf("%d", check_closed(game));
 }
