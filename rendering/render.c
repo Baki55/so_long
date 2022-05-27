@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 23:42:22 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/27 23:43:14 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/28 00:22:34 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_get_image(char c, int can_exit)
 {
 	char	*img_path;
 
-	(void)can_exit;
 	img_path = NULL;
 	if (c == '1')
 		img_path = "sprites/wall.xpm";
@@ -28,17 +27,18 @@ char	*ft_get_image(char c, int can_exit)
 		img_path = "sprites/player.xpm";
 	else if (c == 'E')
 	{
-		if (can_exit)
+		if (can_exit == 1)
 			img_path = "sprites/is_open.xpm";
 		else
 			img_path = "sprites/is_closed.xpm";
 	}
 	return (img_path);
 }
+
 void	render_images_action(t_program game, int x, int y)
 {
 	char	*img_path;
-
+	
 	if (game.map.collectibles == 0)
 		game.can_exit = 1;
 	img_path = ft_get_image(game.map.map[x][y], game.can_exit);
