@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/27 23:45:11 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/28 00:17:47 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*get_next_line(int fd);
 int	map_len(int fd);
 void	get_map(char *file_name, t_program *game);
 int	ft_strcmp(const char *s1, const char *s2);
+void	get_collectible(t_program *game);
 
 //checker functions:
 void	check_map(char *file_name, t_program *game);
