@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/28 19:15:38 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/28 20:21:06 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_map
 	int			col;
 	int			row;
 	int			collectibles;
-	t_vector	pos_player;
+	t_vector	player;
 }				t_map;
 
 // all info needed for the game: 
@@ -47,6 +47,7 @@ typedef struct s_program
 }				t_program;
 
 // utils functions:
+void	ft_swap(char *a, char *b);
 int	ft_strchr(char *str, char c);
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *str);
@@ -56,6 +57,7 @@ int	map_len(int fd);
 void	get_map(char *file_name, t_program *game);
 int	ft_strcmp(const char *s1, const char *s2);
 void	get_collectible(t_program *game);
+void	get_player_position(t_program *game);
 
 //checker functions:
 void	check_map(char *file_name, t_program *game);
@@ -73,10 +75,18 @@ void	err_ecp();
 void	err_closed();
 
 //rendering functions:
-char	*ft_get_image(char c, int can_exit);
+char	*get_image(char c, int can_exit);
 void	render_images_action(t_program game, int x, int y);
-void	ft_render_images(t_program game);
+void	render_images(t_program game);
 
 //free functions:
 void	free_map(t_program *game);
 void	free_game(t_program *game, char *msg);
+int	close_window(t_program *game);
+
+//moves functions:
+void	move_up(t_program *game);
+void	move_down(t_program *game);
+void	move_left(t_program *game);
+void	move_right(t_program *game);
+int	input_player(int key, void *param);
