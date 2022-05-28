@@ -6,13 +6,13 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 23:42:22 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/28 00:22:34 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/28 20:02:52 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-char	*ft_get_image(char c, int can_exit)
+char	*get_image(char c, int can_exit)
 {
 	char	*img_path;
 
@@ -41,7 +41,7 @@ void	render_images_action(t_program game, int x, int y)
 	
 	if (game.map.collectibles == 0)
 		game.can_exit = 1;
-	img_path = ft_get_image(game.map.map[x][y], game.can_exit);
+	img_path = get_image(game.map.map[x][y], game.can_exit);
 	if (img_path)
 	{
 		game.img_ptr = mlx_xpm_file_to_image(game.mlx_ptr, img_path,
@@ -52,7 +52,7 @@ void	render_images_action(t_program game, int x, int y)
 	}
 }
 
-void	ft_render_images(t_program game)
+void	render_images(t_program game)
 {
 	int		x;
 	int		y;
