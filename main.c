@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:35:52 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/28 00:22:39 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/28 15:40:32 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(void)
 	//printf("%d", game.map.collectibles);
 	get_collectible(&game);
 	game.mlx_ptr = mlx_init();
-	game.win_ptr = mlx_new_window(game.mlx_ptr, 600, 600, "SO_LONG");
+	game.win_ptr = mlx_new_window(game.mlx_ptr, ft_strlen(game.map.map[0]) * 32, game.map.row * 32, "SO_LONG");
 	ft_render_images(game);
 	mlx_loop(game.mlx_ptr);
 }
