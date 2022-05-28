@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/28 00:17:47 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/28 19:15:38 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ int	check_closed(t_program game);
 
 //error functions:
 void	err_extension();
-void	err_char(t_program *game);
-void	err_rectangular(t_program *game);
-void	err_ecp(t_program *game);
-void	err_closed(t_program *game);
+void	err_char();
+void	err_rectangular();
+void	err_ecp();
+void	err_closed();
 
 //rendering functions:
 char	*ft_get_image(char c, int can_exit);
@@ -79,3 +79,4 @@ void	ft_render_images(t_program game);
 
 //free functions:
 void	free_map(t_program *game);
+void	free_game(t_program *game, char *msg);
