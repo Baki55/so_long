@@ -6,11 +6,20 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:10:01 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/26 15:54:42 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/28 20:08:19 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+void	ft_swap(char *a, char *b)
+{
+	char	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
 
 int	ft_strchr(char *str, char c)
 {
