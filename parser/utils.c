@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:10:01 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/29 01:12:56 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/29 23:45:10 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,13 @@ int	map_len(int fd)
 	
 	len = 0;
 	line = get_next_line(fd);
+	if (line == NULL)
+	{
+		free(line);
+		write(1, "Something went wrong with the map.", 34);
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
 	while (line != NULL)
 	{
 		len++;
