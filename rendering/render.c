@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 23:42:22 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/28 20:02:52 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/29 01:57:42 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	render_images_action(t_program game, int x, int y)
 				&game.img_size, &game.img_size);
 		mlx_put_image_to_window(game.mlx_ptr, game.win_ptr, game.img_ptr,
 			y * 32, x * 32);
+		mlx_string_put(game.mlx_ptr, game.win_ptr, 5, 15, 0xff0000, ft_itoa(game.mv_count));
 		mlx_destroy_image(game.mlx_ptr, game.img_ptr);
 	}
 }
