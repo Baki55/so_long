@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:12:52 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/22 18:14:34 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/29 03:29:37 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	get_map(char *file_name, t_program *game)
 	i = 0;
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
+	{
 		write(1, "No such a file or directory", 27);
+		exit(EXIT_FAILURE);
+	}
 	game->map.row = map_len(fd);
 	close(fd);
 	game->map.map = malloc(sizeof(char *) * (game->map.row + 1));
