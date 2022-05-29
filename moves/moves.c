@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 20:05:49 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/28 20:22:26 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/29 02:30:30 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	move_down(t_program *game)
 
 void	move_left(t_program *game)
 {
+	game->mv_right = -1;
 	if (game->map.map[game->map.player.x][game->map.player.y - 1] == '0')
 	{
 		ft_swap(&game->map.map[game->map.player.x][game->map.player.y - 1],
@@ -77,6 +78,7 @@ void	move_left(t_program *game)
 
 void	move_right(t_program *game)
 {
+	game->mv_right = 0;
 	if (game->map.map[game->map.player.x][game->map.player.y + 1] == '0')
 	{
 		ft_swap(&game->map.map[game->map.player.x][game->map.player.y + 1],
