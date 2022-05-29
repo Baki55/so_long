@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 21:54:32 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/28 19:49:44 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/29 14:15:55 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	free_game(t_program *game, char *msg)
 		write(1, "Bravo :)", 8);
 	else
 		write(1, "Quitting the game", 17);
+	system("leaks so_long");
 	exit(EXIT_SUCCESS);
 }
 
