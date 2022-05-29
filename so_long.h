@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/29 01:59:03 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/29 02:34:02 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_program
 	int			fd;
 	int			can_exit;
 	int		mv_count;
+	int	mv_right;
 }				t_program;
 
 // utils functions:
@@ -76,8 +77,11 @@ void	err_rectangular();
 void	err_ecp();
 void	err_closed();
 
+//init functions:
+void	init_game(t_program *game);
+
 //rendering functions:
-char	*get_image(char c, int can_exit);
+char	*get_image(char c, int can_exit, int mv_right);
 void	render_images_action(t_program game, int x, int y);
 void	render_images(t_program game);
 
