@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/28 20:21:06 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/29 01:59:03 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,12 @@ typedef struct s_program
 	t_map		map;
 	int			fd;
 	int			can_exit;
-	size_t		mv_count;
+	int		mv_count;
 }				t_program;
 
 // utils functions:
+static size_t	len_nbr(int n);
+char	*ft_itoa(int c);
 void	ft_swap(char *a, char *b);
 int	ft_strchr(char *str, char c);
 size_t	ft_strlen(const char *str);
