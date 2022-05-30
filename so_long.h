@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/30 13:48:07 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/30 22:51:18 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct s_program
 }				t_program;
 
 // utils functions:
-static size_t	len_nbr(int n);
+size_t	len_nbr(int n);
 char	*ft_itoa(int c);
 void	ft_swap(char *a, char *b);
 int	ft_strchr(char *str, char c);
