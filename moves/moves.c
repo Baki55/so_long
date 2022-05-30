@@ -6,11 +6,12 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 20:05:49 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/29 02:30:30 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/30 14:24:46 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+#include <stdio.h>
 
 void	move_up(t_program *game)
 {
@@ -27,10 +28,14 @@ void	move_up(t_program *game)
 		game->map.map[game->map.player.x][game->map.player.y] = '0';
 		game->map.map[game->map.player.x - 1][game->map.player.y] = 'P';
 		game->map.player.x--;
+		game->mv_count++;
 	}
 	else if (game->map.map[game->map.player.x - 1][game->map.player.y] == 'E'
 		&& !game->map.collectibles)
+	{
 		free_game(game, "BRAVO!");
+		game->mv_count++;
+	}
 }
 
 void	move_down(t_program *game)
@@ -48,10 +53,14 @@ void	move_down(t_program *game)
 		game->map.map[game->map.player.x][game->map.player.y] = '0';
 		game->map.map[game->map.player.x + 1][game->map.player.y] = 'P';
 		game->map.player.x++;
+		game->mv_count++;
 	}
 	else if (game->map.map[game->map.player.x + 1][game->map.player.y] == 'E'
 		&& !game->map.collectibles)
+	{
 		free_game(game, "BRAVO!");
+		game->mv_count++;
+	}
 }
 
 void	move_left(t_program *game)
@@ -70,10 +79,14 @@ void	move_left(t_program *game)
 		game->map.map[game->map.player.x][game->map.player.y] = '0';
 		game->map.map[game->map.player.x][game->map.player.y - 1] = 'P';
 		game->map.player.y--;
+		game->mv_count++;
 	}
 	else if (game->map.map[game->map.player.x][game->map.player.y - 1] == 'E'
 		&& !game->map.collectibles)
+	{
 		free_game(game, "BRAVO!");
+		game->mv_count++;
+	}
 }
 
 void	move_right(t_program *game)
@@ -92,10 +105,14 @@ void	move_right(t_program *game)
 		game->map.map[game->map.player.x][game->map.player.y] = '0';
 		game->map.map[game->map.player.x][game->map.player.y + 1] = 'P';
 		game->map.player.y++;
+		game->mv_count++;
 	}
 	else if (game->map.map[game->map.player.x][game->map.player.y + 1] == 'E'
 		&& !game->map.collectibles)
+	{
 		free_game(game, "BRAVO!");
+		game->mv_count++;
+	}
 }
 
 int	input_player(int key, void *param)
@@ -115,5 +132,6 @@ int	input_player(int key, void *param)
 		move_left(game);
 	mlx_clear_window(game->mlx_ptr, game->win_ptr);
 	render_images(*game);
+	printf("%d\n", game->mv_count);
 	return (0);
 }
