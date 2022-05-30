@@ -6,19 +6,18 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:35:52 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/29 18:16:28 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/30 14:17:09 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 int	main(void)
 {
 
 	t_program	game;
 
-	check_map("maps/map1.ber", &game);
+	check_map("maps/map2.ber", &game);
 	init_game(&game);
 	mlx_hook(game.win_ptr, 17, 0, *close_window, &game);
 	render_images(game);
