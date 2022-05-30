@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:10:01 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/29 23:45:10 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/30 22:06:47 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ size_t	ft_strlen(const char *str)
 char	*ft_strdup(const char *str)
 {
 	char	*dup;
-	size_t	str_len;
+	int	str_len;
 	int	i;
 	
 	i = 0;
@@ -133,7 +133,7 @@ int	in_set(char c)
 	return (1);
 }
 
-static size_t	len_nbr(int n)
+int	len_nbr(int n)
 {
 	size_t	nbr;
 
