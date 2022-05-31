@@ -6,7 +6,7 @@
 #    By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 21:37:32 by bkhatib           #+#    #+#              #
-#    Updated: 2022/05/30 22:43:56 by bkhatib          ###   ########.fr        #
+#    Updated: 2022/05/31 14:07:06 by bkhatib          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJS) $(HEADER)
 		@echo "$(SUCCESS)$(GREEN)- Executable ready.\n$(RESET)"
 
 %.o: %.c $(HEADER)
-	@echo "$(CURSIVE)$(GREY)	- Making object file $@ from source file notdir $< ... $(RESET)\n"
+	@echo "$(CURSIVE)$(GREY)	- Making object file $@ from source file $< ... $(RESET)\n"
 	@ $(CC) $(FLAGS) -c $< -o $@
 	
 clean:
