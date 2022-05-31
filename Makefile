@@ -6,7 +6,7 @@
 #    By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 21:37:32 by bkhatib           #+#    #+#              #
-#    Updated: 2022/05/31 14:07:06 by bkhatib          ###   ########.fr        #
+#    Updated: 2022/05/31 20:03:46 by bkhatib          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,22 @@ SUCCESS	=	[$(GREEN)SUCCESS$(RESET)]
 all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADER)
-		@echo "$(CURSIVE)$(GREY)	- Making object file $@ from source file $< ... $(RESET)\n"
+		@echo "$(CURSIVE)$(GREY)	- Compiling $(NAME)  ... $(RESET)\n"
 		$(CC) $(OBJS) $(INCLUDE) $(LIBMLX) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 		@echo "$(SUCCESS)$(GREEN)- Executable ready.\n$(RESET)"
 
 %.o: %.c $(HEADER)
 	@echo "$(CURSIVE)$(GREY)	- Making object file $@ from source file $< ... $(RESET)\n"
 	@ $(CC) $(FLAGS) -c $< -o $@
+
+bonus:
+	@$(MAKE) -C bonus
+clean_bonus:
+	@$(MAKE) clean -C bonus
+fclean_bonus:
+	@$(MAKE) fclean -C bonus
+re_bonus:
+	@$(MAKE) re -C bonus
 	
 clean:
 	@ $(RM) $(OBJS)
