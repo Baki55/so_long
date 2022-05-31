@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 20:05:49 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/31 20:26:50 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/31 21:29:29 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ void	move_up(t_program *game)
 		free_game(game, "BRAVO!");
 		game->mv_count++;
 	}
+	else if (game->map.map[game->map.player.x - 1][game->map.player.y] == 'X')
+	{
+		game->map.map[game->map.player.x - 1][game->map.player.y] = 'A';
+	}
 }
 
 void	move_down(t_program *game)
@@ -59,6 +63,11 @@ void	move_down(t_program *game)
 	{
 		free_game(game, "BRAVO!");
 		game->mv_count++;
+	}
+	else if (game->map.map[game->map.player.x + 1][game->map.player.y] == 'X')
+	{
+		write(1, "Don't touch the bombs :)\n", 25);
+		free_game(game, "Don't touch the bombs :)");
 	}
 }
 
@@ -86,6 +95,11 @@ void	move_left(t_program *game)
 		free_game(game, "BRAVO!");
 		game->mv_count++;
 	}
+	else if (game->map.map[game->map.player.x][game->map.player.y - 1] == 'X')
+	{
+		write(1, "Don't touch the bombs :)\n", 25);
+		free_game(game, "Don't touch the bombs :)");
+	}
 }
 
 void	move_right(t_program *game)
@@ -111,6 +125,11 @@ void	move_right(t_program *game)
 	{
 		free_game(game, "BRAVO!");
 		game->mv_count++;
+	}
+	else if (game->map.map[game->map.player.x][game->map.player.y + 1] == 'X')
+	{
+		write(1, "Don't touch the bombs :)\n", 25);
+		free_game(game, "Don't touch the bombs :)");
 	}
 }
 
