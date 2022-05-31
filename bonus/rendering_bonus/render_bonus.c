@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 23:42:22 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/31 20:40:04 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/05/31 21:12:07 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ char	*get_image(char c, int can_exit, int mv_right)
 	else if (c == 'X')
 	{
 		img_path = "sprites_bonus/bomb.xpm";
+	}
+	else if (c == 'A')
+	{
+		img_path = "sprites_bonus/explose.xpm";
 	}
 	else if (c == 'E')
 	{
