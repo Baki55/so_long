@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 01:36:06 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/31 20:20:01 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 16:44:33 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	init_game(t_program *game)
 	game->can_exit = -1;
 	game->mv_count = 0;
 	game->mv_right = -1;
+	game->is_explosion = 0;
 }
