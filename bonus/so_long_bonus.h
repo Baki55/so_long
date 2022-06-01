@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/31 20:11:51 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 17:00:29 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_program
 	int			can_exit;
 	int		mv_count;
 	int	mv_right;
+	int		is_explosion;
 }				t_program;
 
 // utils functions:
@@ -98,3 +99,4 @@ void	move_down(t_program *game);
 void	move_left(t_program *game);
 void	move_right(t_program *game);
 int	input_player(int key, void *param);
+int animations(t_program *game);
