@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 20:05:49 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/31 21:29:29 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 17:00:35 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	move_up(t_program *game)
 	else if (game->map.map[game->map.player.x - 1][game->map.player.y] == 'X')
 	{
 		game->map.map[game->map.player.x - 1][game->map.player.y] = 'A';
+		game->is_explosion = 1;
 	}
 }
 
@@ -66,8 +67,8 @@ void	move_down(t_program *game)
 	}
 	else if (game->map.map[game->map.player.x + 1][game->map.player.y] == 'X')
 	{
-		write(1, "Don't touch the bombs :)\n", 25);
-		free_game(game, "Don't touch the bombs :)");
+		game->map.map[game->map.player.x + 1][game->map.player.y] = 'A';
+		game->is_explosion = 1;
 	}
 }
 
@@ -97,8 +98,8 @@ void	move_left(t_program *game)
 	}
 	else if (game->map.map[game->map.player.x][game->map.player.y - 1] == 'X')
 	{
-		write(1, "Don't touch the bombs :)\n", 25);
-		free_game(game, "Don't touch the bombs :)");
+		game->map.map[game->map.player.x][game->map.player.y - 1] = 'A';
+		game->is_explosion = 1;
 	}
 }
 
@@ -128,8 +129,8 @@ void	move_right(t_program *game)
 	}
 	else if (game->map.map[game->map.player.x][game->map.player.y + 1] == 'X')
 	{
-		write(1, "Don't touch the bombs :)\n", 25);
-		free_game(game, "Don't touch the bombs :)");
+		game->map.map[game->map.player.x][game->map.player.y + 1] = 'A';
+		game->is_explosion = 1;
 	}
 }
 
