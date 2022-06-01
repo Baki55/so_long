@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:35:52 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/31 20:12:33 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 17:00:11 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	mlx_hook(game.win_ptr, 17, 0, *close_window, &game);
 	render_images(game);
 	mlx_hook(game.win_ptr, 2, 0, *input_player, &game);
-	mlx_loop(game.mlx_ptr);
-	
+	mlx_loop_hook(game.mlx_ptr, *animations, &game);
+	mlx_loop(game.mlx_ptr);	
 	return (0);
 }
