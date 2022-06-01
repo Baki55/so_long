@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:35:52 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/30 22:27:53 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 20:44:36 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int	main(int argc, char **argv)
 	mlx_hook(game.win_ptr, 2, 0, *input_player, &game);
 	mlx_loop(game.mlx_ptr);
 	
-	return (0);
+	return (1);
 }
