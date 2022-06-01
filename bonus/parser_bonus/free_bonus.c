@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 21:54:32 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/31 20:10:29 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 20:52:42 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ void	free_game(t_program *game, char *msg)
 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 	if (ft_strcmp(msg, "BRAVO!") == 0)
 		write(1, "Bravo :)", 8);
+	else if (ft_strcmp(msg, "Don't touch the bomb :).") == 0)
+		write(1, "Don't touch the bomb :).", 24);
 	else
-		write(1, "Quitting the game", 17);
+		write(1, "Quitting the game.", 17);
 	exit(EXIT_SUCCESS);
 }
 
 int	close_window(t_program *game)
 {
-	free_game(game, "Window closed.");
+	free_game(game, "Quitting the game.");
 	return (0);
 }
