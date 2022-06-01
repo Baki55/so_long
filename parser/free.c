@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 21:54:32 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/29 17:58:09 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 21:54:24 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	free_map(t_program *game)
 {
 	int	i;
-	
+
 	i = 0;
 	while (game->map.map[i])
 		free(game->map.map[i++]);

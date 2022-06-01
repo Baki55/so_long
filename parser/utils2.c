@@ -1,33 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_char.c                                       :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 21:58:45 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 21:53:47 by bkhatib          ###   ########.fr       */
+/*   Created: 2022/06/01 21:57:45 by bkhatib           #+#    #+#             */
+/*   Updated: 2022/06/01 22:02:39 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	check_char(t_program game)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	row;
-	int	col;
+	write(fd, &c, 1);
+}
 
-	row = 0;
-	while (game.map.map[row] != NULL)
+void	ft_putstr_fd(char *s, int fd)
+{
+	while (*s != '\0')
 	{
-		col = 0;
-		while (game.map.map[row][col] != '\n' && game.map.map[row][col] != '\0')
-		{
-			if (in_set(game.map.map[row][col]) == 1)
-				return (1);
-			col++;
-		}
-		row++;
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
+}
+
+void	ft_swap(char *a, char *b)
+{
+	char	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+int	ft_strchr(char *str, char c)
+{
+	while (*str != '\0')
+	{
+		if (*str == c)
+			return (1);
+		str++;
 	}
 	return (0);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

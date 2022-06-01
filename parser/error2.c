@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_char.c                                       :+:      :+:    :+:   */
+/*   error2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 21:58:45 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 21:53:47 by bkhatib          ###   ########.fr       */
+/*   Created: 2022/06/01 21:52:12 by bkhatib           #+#    #+#             */
+/*   Updated: 2022/06/01 22:13:51 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	check_char(t_program game)
+void	err_extension(t_program *game)
 {
-	int	row;
-	int	col;
-
-	row = 0;
-	while (game.map.map[row] != NULL)
-	{
-		col = 0;
-		while (game.map.map[row][col] != '\n' && game.map.map[row][col] != '\0')
-		{
-			if (in_set(game.map.map[row][col]) == 1)
-				return (1);
-			col++;
-		}
-		row++;
-	}
-	return (0);
+	write(1, "Error\n", 6);
+	write(1, "Invalid file extension.\n", 24);
+	free_map(game);
+	exit(EXIT_FAILURE);
 }
