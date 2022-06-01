@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/30 22:51:18 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 22:36:55 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct s_program
 }				t_program;
 
 // utils functions:
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 size_t	len_nbr(int n);
 char	*ft_itoa(int c);
 void	ft_swap(char *a, char *b);
@@ -61,6 +63,7 @@ void	get_map(char *file_name, t_program *game);
 int	ft_strcmp(const char *s1, const char *s2);
 void	get_collectible(t_program *game);
 void	get_player_position(t_program *game);
+void	put_mv_count(t_program *game);
 
 //checker functions:
 void	check_map(char *file_name, t_program *game);
@@ -72,12 +75,12 @@ int	check_closed(t_program game);
 int	check_player(t_program game);
 
 //error functions:
-void	err_extension();
-void	err_char();
-void	err_rectangular();
-void	err_ecp();
-void	err_closed();
-void	err_player();
+void	err_extension(t_program *game);
+void	err_char(t_program *game);
+void	err_rectangular(t_program *game);
+void	err_ecp(t_program *game);
+void	err_closed(t_program *game);
+void	err_player(t_program *game);
 
 //init functions:
 void	init_game(t_program *game);

@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:10:01 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 22:02:57 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 22:42:52 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,14 @@ char	*ft_itoa(int c)
 		}
 	}
 	return (buff);
+}
+
+void	put_mv_count(t_program *game)
+{
+	char	*mv_count_str;
+
+	mv_count_str = ft_itoa(game->mv_count);
+	ft_putstr_fd(mv_count_str, 1);
+	write(1, "\n", 1);
+	free(mv_count_str);
 }

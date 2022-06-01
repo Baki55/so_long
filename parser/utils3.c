@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 21:59:30 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 22:16:50 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/01 22:43:45 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *str)
 	char	*dup;
 	size_t	str_len;
 	size_t	i;
-	
+
 	i = 0;
 	str_len = ft_strlen(str);
 	dup = malloc(sizeof(char) * (str_len + 1));
