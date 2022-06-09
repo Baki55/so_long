@@ -6,13 +6,13 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 12:49:41 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 20:46:25 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/09 14:32:24 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long_bonus.h"
 
-int animations(t_program *game)
+int	animations(t_program *game)
 {
 	if (game->is_explosion)
 	{

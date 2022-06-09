@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 20:05:49 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 17:00:35 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/09 14:47:56 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,7 @@ void	move_up(t_program *game)
 		game->mv_count++;
 	}
 	else if (game->map.map[game->map.player.x - 1][game->map.player.y] == 'X')
-	{
-		game->map.map[game->map.player.x - 1][game->map.player.y] = 'A';
-		game->is_explosion = 1;
-	}
+		setup_animation(game, "up");
 }
 
 void	move_down(t_program *game)
@@ -66,10 +63,7 @@ void	move_down(t_program *game)
 		game->mv_count++;
 	}
 	else if (game->map.map[game->map.player.x + 1][game->map.player.y] == 'X')
-	{
-		game->map.map[game->map.player.x + 1][game->map.player.y] = 'A';
-		game->is_explosion = 1;
-	}
+		setup_animation(game, "down");
 }
 
 void	move_left(t_program *game)
@@ -97,10 +91,7 @@ void	move_left(t_program *game)
 		game->mv_count++;
 	}
 	else if (game->map.map[game->map.player.x][game->map.player.y - 1] == 'X')
-	{
-		game->map.map[game->map.player.x][game->map.player.y - 1] = 'A';
-		game->is_explosion = 1;
-	}
+		setup_animation(game, "left");
 }
 
 void	move_right(t_program *game)
@@ -128,16 +119,13 @@ void	move_right(t_program *game)
 		game->mv_count++;
 	}
 	else if (game->map.map[game->map.player.x][game->map.player.y + 1] == 'X')
-	{
-		game->map.map[game->map.player.x][game->map.player.y + 1] = 'A';
-		game->is_explosion = 1;
-	}
+		setup_animation(game, "right");
 }
 
 int	input_player(int key, void *param)
 {
 	t_program	*game;
-	
+
 	game = (t_program *)param;
 	if (key == 53)
 		free_game(game, "Quitting the game");

@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 17:00:29 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/09 14:48:05 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,3 +100,4 @@ void	move_left(t_program *game);
 void	move_right(t_program *game);
 int	input_player(int key, void *param);
 int animations(t_program *game);
+void	setup_animation(t_program *game, char *direction);
