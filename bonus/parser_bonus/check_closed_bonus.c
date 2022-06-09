@@ -6,13 +6,13 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 20:42:58 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/31 20:09:39 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/09 15:00:07 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long_bonus.h"
 
-int 	check_closed(t_program game)
+int	check_closed(t_program game)
 {
 	int	i;
 	int	j;

@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:35:52 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 20:45:00 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/09 14:58:44 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_program	game;
-	
+
 	if (argc != 2)
 	{
 		write(1, "Usage: ./so_long maps_bonus/[name_of_the_map].ber\n", 44);

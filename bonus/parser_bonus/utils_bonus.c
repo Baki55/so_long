@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:10:01 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/09 14:52:40 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/09 15:07:23 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	ft_strchr(char *str, char c)
 
 size_t	ft_strlen(const char *str)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	while (str[i] != '\0')
 		i++;
@@ -47,7 +47,7 @@ char	*ft_strdup(const char *str)
 	char	*dup;
 	size_t	str_len;
 	size_t	i;
-	
+
 	i = 0;
 	str_len = ft_strlen(str);
 	dup = malloc(sizeof(char) * (str_len + 1));
@@ -66,14 +66,14 @@ char	*get_next_line(int fd)
 {
 	char	line[8000000];
 	char	buff;
-	int	i;
-	
+	int		i;
+
 	i = 0;
 	while (read(fd, &buff, 1) == 1)
 	{
 		line[i] = buff;
 		if (buff == '\n')
-			break;
+			break ;
 		i++;
 	}
 	line[i] = '\0';
@@ -85,7 +85,7 @@ char	*get_next_line(int fd)
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (s1[i] == s2[i] && s1[i] && s2[i])
 		i++;
@@ -94,9 +94,9 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 int	map_len(int fd)
 {
-	int	len;
+	int		len;
 	char	*line;
-	
+
 	len = 0;
 	line = get_next_line(fd);
 	if (line == NULL)
@@ -119,7 +119,7 @@ int	map_len(int fd)
 
 int	in_set(char c)
 {
-	int	i;
+	int		i;
 	char	*set;
 	
 	i = 0;
