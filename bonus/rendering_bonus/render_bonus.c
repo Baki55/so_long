@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 23:42:22 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/05/31 21:12:07 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/09 14:54:59 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,9 @@ char	*get_image(char c, int can_exit, int mv_right)
 			img_path = "../sprites/player_right.xpm";
 	}
 	else if (c == 'X')
-	{
 		img_path = "sprites_bonus/bomb.xpm";
-	}
 	else if (c == 'A')
-	{
 		img_path = "sprites_bonus/explose.xpm";
-	}
 	else if (c == 'E')
 	{
 		if (can_exit == 1)
@@ -52,7 +48,7 @@ void	render_images_action(t_program game, int x, int y)
 {
 	char	*img_path;
 	char	*mv_count_str;
-	
+
 	if (game.map.collectibles == 0)
 		game.can_exit = 1;
 	img_path = get_image(game.map.map[x][y], game.can_exit, game.mv_right);
@@ -63,7 +59,8 @@ void	render_images_action(t_program game, int x, int y)
 		mlx_put_image_to_window(game.mlx_ptr, game.win_ptr, game.img_ptr,
 			y * 32, x * 32);
 		mv_count_str = ft_itoa(game.mv_count);
-		mlx_string_put(game.mlx_ptr, game.win_ptr, 5, 15, 0xff0000, mv_count_str);
+		mlx_string_put(game.mlx_ptr,
+			game.win_ptr, 5, 15, 0xff0000, mv_count_str);
 		free(mv_count_str);
 		mlx_destroy_image(game.mlx_ptr, game.img_ptr);
 	}
