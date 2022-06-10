@@ -6,16 +6,15 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 21:52:12 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 22:13:51 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/10 13:27:40 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	err_extension(t_program *game)
+void	err_extension()
 {
 	write(1, "Error\n", 6);
 	write(1, "Invalid file extension.\n", 24);
-	free_map(game);
 	exit(EXIT_FAILURE);
 }
