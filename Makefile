@@ -6,7 +6,7 @@
 #    By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 21:37:32 by bkhatib           #+#    #+#              #
-#    Updated: 2022/05/31 20:03:46 by bkhatib          ###   ########.fr        #
+#    Updated: 2022/06/10 15:32:21 by bkhatib          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,13 +40,13 @@ $(NAME): $(OBJS) $(HEADER)
 	@ $(CC) $(FLAGS) -c $< -o $@
 
 bonus:
-	@$(MAKE) -C bonus
+	@$(MAKE) -C so_long_bonus
 clean_bonus:
-	@$(MAKE) clean -C bonus
+	@$(MAKE) clean -C so_long_bonus
 fclean_bonus:
-	@$(MAKE) fclean -C bonus
+	@$(MAKE) fclean -C so_long_bonus
 re_bonus:
-	@$(MAKE) re -C bonus
+	@$(MAKE) re -C so_long_bonus
 	
 clean:
 	@ $(RM) $(OBJS)
