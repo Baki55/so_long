@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 23:42:22 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/09 14:54:59 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/10 13:51:40 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,13 @@ char	*get_image(char c, int can_exit, int mv_right)
 	else if (c == 'C')
 		img_path = "../sprites/collec.xpm";
 	else if (c == 'P')
-	{
-		if (mv_right == -1)
-			img_path = "../sprites/player_left.xpm";
-		else if (mv_right == 0)
-			img_path = "../sprites/player_right.xpm";
-	}
+		img_path = check_player_direction(mv_right);
 	else if (c == 'X')
 		img_path = "sprites_bonus/bomb.xpm";
 	else if (c == 'A')
 		img_path = "sprites_bonus/explose.xpm";
 	else if (c == 'E')
-	{
-		if (can_exit == 1)
-			img_path = "../sprites/is_open.xpm";
-		else
-			img_path = "../sprites/is_closed.xpm";
-	}
+		img_path = check_door_isopen(can_exit);
 	return (img_path);
 }
 

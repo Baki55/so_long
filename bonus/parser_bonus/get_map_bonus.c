@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:12:52 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/09 15:04:04 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/10 13:37:54 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ void	get_map(char *file_name, t_program *game)
 	game->map.map[game->map.row] = 0;
 	fd = open(file_name, O_RDONLY);
 	while (i < game->map.row)
-	{
-		game->map.map[i] = get_next_line(fd);
-		i++;
-	}
+		game->map.map[i++] = get_next_line(fd);
 	close(fd);
 }

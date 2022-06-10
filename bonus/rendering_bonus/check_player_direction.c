@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_closed_bonus.c                               :+:      :+:    :+:   */
+/*   check_player_direction.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 20:42:58 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/10 13:08:28 by bkhatib          ###   ########.fr       */
+/*   Created: 2022/06/10 13:40:28 by bkhatib           #+#    #+#             */
+/*   Updated: 2022/06/10 13:44:58 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long_bonus.h"
 
-int	check_closed(t_program game)
+char	*check_player_direction(int mv_right)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	game.map.col = ft_strlen(game.map.map[0]);
-	while (i < game.map.row)
-	{
-		j = 0;
-		while (j < game.map.col)
-		{
-			if (i == 0 || i == game.map.row - 1)
-				if (game.map.map[i][j] != '1')
-					return (1);
-			if (j == 0 || j == game.map.col - 1)
-				if (game.map.map[i][j] != '1')
-					return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	if (mv_right == -1)
+		return ("../sprites/player_left.xpm");
+	return ("../sprites/player_right.xpm");
 }

@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/10 13:04:46 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/10 13:50:35 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ int		check_player(t_program game);
 
 //error functions:
 void	err_extension(void);
-void	err_char(void);
-void	err_rectangular(void);
-void	err_ecp(void);
-void	err_closed(void);
-void	err_player(void);
+void	err_char(t_program *game);
+void	err_rectangular(t_program *game);
+void	err_ecp(t_program *game);
+void	err_closed(t_program *game);
+void	err_player(t_program *game);
 
 //init functions:
 void	init_game(t_program *game);
@@ -90,6 +90,8 @@ void	init_game(t_program *game);
 char	*get_image(char c, int can_exit, int mv_right);
 void	render_images_action(t_program game, int x, int y);
 void	render_images(t_program game);
+char	*check_player_direction(int mv_right);
+char	*check_door_isopen(int can_exit);
 
 //free functions:
 void	free_map(t_program *game);
