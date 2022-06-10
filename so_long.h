@@ -6,7 +6,7 @@
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 12:58:14 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/10 13:27:50 by bkhatib          ###   ########.fr       */
+/*   Updated: 2022/06/10 14:01:51 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int		check_closed(t_program game);
 int		check_player(t_program game);
 
 //error functions:
-void	err_extension();
+void	err_extension(void);
 void	err_char(t_program *game);
 void	err_rectangular(t_program *game);
 void	err_ecp(t_program *game);
