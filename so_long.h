@@ -5,17 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkhatib <bkhatib@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/14 12:50:40 by bkhatib           #+#    #+#             */
-/*   Updated: 2022/06/01 22:36:55 by bkhatib          ###   ########.fr       */
+/*   Created: 2022/06/10 12:58:14 by bkhatib           #+#    #+#             */
+/*   Updated: 2022/06/10 13:01:42 by bkhatib          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
-#include <sys/errno.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
+#ifndef SO_LONG_H
+# define SO_LONG_H
+
+# include "mlx.h"
+# include <sys/errno.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 typedef struct s_vector
 {
@@ -43,8 +46,8 @@ typedef struct s_program
 	t_map		map;
 	int			fd;
 	int			can_exit;
-	int		mv_count;
-	int	mv_right;
+	int			mv_count;
+	int			mv_right;
 }				t_program;
 
 // utils functions:
@@ -53,26 +56,26 @@ void	ft_putstr_fd(char *s, int fd);
 size_t	len_nbr(int n);
 char	*ft_itoa(int c);
 void	ft_swap(char *a, char *b);
-int	ft_strchr(char *str, char c);
+int		ft_strchr(char *str, char c);
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *str);
-int	in_set(char c);
+int		in_set(char c);
 char	*get_next_line(int fd);
-int	map_len(int fd);
+int		map_len(int fd);
 void	get_map(char *file_name, t_program *game);
-int	ft_strcmp(const char *s1, const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 void	get_collectible(t_program *game);
 void	get_player_position(t_program *game);
 void	put_mv_count(t_program *game);
 
 //checker functions:
 void	check_map(char *file_name, t_program *game);
-int	check_extention(const char *file_name, const char *extension);
-int	check_char(t_program game);
-int	check_rectangular(t_program game);
-int	check_ecp(t_program game);
-int	check_closed(t_program game);
-int	check_player(t_program game);
+int		check_extention(const char *file_name, const char *extension);
+int		check_char(t_program game);
+int		check_rectangular(t_program game);
+int		check_ecp(t_program game);
+int		check_closed(t_program game);
+int		check_player(t_program game);
 
 //error functions:
 void	err_extension(t_program *game);
@@ -93,11 +96,13 @@ void	render_images(t_program game);
 //free functions:
 void	free_map(t_program *game);
 void	free_game(t_program *game, char *msg);
-int	close_window(t_program *game);
+int		close_window(t_program *game);
 
 //moves functions:
 void	move_up(t_program *game);
 void	move_down(t_program *game);
 void	move_left(t_program *game);
 void	move_right(t_program *game);
-int	input_player(int key, void *param);
+int		input_player(int key, void *param);
+
+#endif
